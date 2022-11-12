@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import Progress from '../Progress/Progress';
 import { useLocation } from 'react-router-dom';
 import './MainProgress.css';
@@ -14,7 +15,7 @@ const MainProgress = () => {
             <Stack direction="vertical">
                 <Stack direction="horizontal">
                     <div className='month'>{month}</div>
-                    <Button href="/">Calendar</Button>
+                    <Link className='calendarBtn' to={'/'} >Calendar</Link>
                 </Stack>
                 <Progress date={date}/>
                 

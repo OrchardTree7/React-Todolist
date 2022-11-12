@@ -93,3 +93,13 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-accent);
 }
+
+.plantBtn {
+  text-decoration: none;
+  color: black;
+}
+
+.plantBtn:hover {
+  color: #000;
+  text-decoration: underline;
+}

@@ -19,9 +19,7 @@ const MainCalendar = () => {
 	return (
 		<>
 			<Calendar onClickDay={handleShow} onChange={setDate} value={date} formatDay={(locale, date) => date.toLocaleDateString('en', { day: 'numeric' })} calendarType='US'></Calendar>
-			<Link to={'/plant'} state={{ date: date }}>
-				plant
-			</Link>
+			<Link className='plantBtn' to={'/plant'} state={{ date: date }}>Plant</Link>
 			<Modal show={show} onHide={handleClose} centered>
 				<Modal.Header>
 					<Button onClick={handleClose}>{'<'}</Button>
@@ -35,7 +33,4 @@ const MainCalendar = () => {
 		</>
 	);
 };
-
 export default MainCalendar;
-
-//<Link to={"/plant"} state={{date:date}}>plant</Link>

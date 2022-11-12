@@ -16,3 +16,13 @@
 	--bs-btn-hover-bg: #ccc;
 	--bs-btn-hover-color: #000;
 }
+
+.calendarBtn {
+	text-decoration: none;
+	color: black;
+}
+
+.calendarBtn:hover {
+	color: #000;
+	text-decoration: underline;
+}

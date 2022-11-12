@@ -15,7 +15,7 @@ const Progress = ({date}) => {
             <ProgressBar 
                 completed={Math.round(completedTodos/allTodos*100)} 
                 bgColor="#36CF00"
-                //baseBgColor="#fff"
+                baseBgColor="#fff"
             />
         </div>
     )
