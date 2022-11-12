@@ -1,0 +1,26 @@
+.form {
+	width: 120px;
+	display: block;
+	padding: 1rem 1rem;
+	font-size: 1rem;
+}
+
+.input {
+	display: block;
+	background-color: #c6ddf8;
+	font-size: 1rem;
+	padding: 0.7rem 1rem;
+	border: none;
+	outline: none;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+.button {
+	padding: 0 2 0 2 rem;
+	border-top-right-radius: 8px;
+}
+
+.button:hover {
+	filter: brightness(130%);
+}

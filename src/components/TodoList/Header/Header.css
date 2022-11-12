@@ -1,0 +1,28 @@
+.header {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters {
+  display: block;
+}
+
+.filter {
+  font-size: 1rem;
+  margin: 0.4rem;
+  text-transform: capitalize;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.filter:hover,
+.filter.selected {
+  opacity: 1;
+}
+
+.filter.selected::after {
+  content: '';
+  display: block;
+  margin-top: 0.2rem;
+}

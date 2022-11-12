@@ -1,0 +1,33 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.1rem 0;
+  width: 65%;
+}
+
+.checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.text {
+  flex: 1 1 0%;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 100%;
+  transition: all 150ms ease-out;
+}
+
+.icon:hover {
+  transform: rotate(15deg) scale(1.2);
+}
+
+.button {
+  background-color: transparent;
+}
