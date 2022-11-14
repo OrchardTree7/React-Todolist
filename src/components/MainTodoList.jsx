@@ -11,7 +11,7 @@ const MainTodoList = ({ date }) => {
 	const selDate = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`;
 	return (
 		<Container>
-			<Form.Group className='mb-3' controlId='formListItem'>
+			<Form.Group className='conn' controlId='formListItem'>
 				<Stack direction='horizontal' gap={3}>
 					<Header filters={filters} filter={filter} onFilterChange={setFilter} />
 					<TodoList filter={filter} selDate={selDate} date={date} />
