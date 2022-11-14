@@ -1,26 +1,26 @@
-.form {
-	width: 120px;
-	display: block;
-	padding: 1rem 1rem;
-	font-size: 1rem;
+form {
+  width: 150px;
+  display: block;
+  padding: 1rem 1rem;
+  font-size: 1rem;
 }
 
-.input {
-	display: block;
-	background-color: #c6ddf8;
-	font-size: 1rem;
-	padding: 0.7rem 1rem;
-	border: none;
-	outline: none;
-	border-top-left-radius: 8px;
-	border-bottom-left-radius: 8px;
+input {
+  display: block;
+  background-color: rgba(152, 125, 168, 0.6488970588235294);
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  border: none;
+  outline: none;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
-.button {
-	padding: 0 2 0 2 rem;
-	border-top-right-radius: 8px;
+button {
+  padding: 0 2 0 2 rem;
+  border-top-right-radius: 8px;
 }
 
-.button:hover {
-	filter: brightness(130%);
+button:hover {
+  filter: brightness(130%);
 }
