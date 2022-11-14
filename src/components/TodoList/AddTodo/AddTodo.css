@@ -10,13 +10,14 @@ input {
   padding: 0 2 0 2 rem;
   border: none;
   outline: none;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-radius: 8px;
+  text-align: center;
 }
 
 button {
   padding: 0 2 0 2 rem;
-  border-top-right-radius: 8px;
+  border-radius: 8px;
+  text-align: center;
 }
 
 button:hover {
