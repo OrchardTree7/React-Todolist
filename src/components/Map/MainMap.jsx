@@ -48,7 +48,7 @@ const MainMap = () => {
 					latitude: 37,
 					zoom: 10,
 				}}
-				style={{ height: '500px' }}
+				style={{ height: '400px' }}
 				mapStyle='mapbox://styles/mapbox/streets-v9'
 				mapboxAccessToken='pk.eyJ1Ijoic3Vud29uZ2EiLCJhIjoiY2w4eWxkNDZ5MGh2dDN3dDV2ZjNma2M2MiJ9.uRRO8IUZTFjCbk7Jn8q3ng'
 			>

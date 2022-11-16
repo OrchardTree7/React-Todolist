@@ -6,6 +6,7 @@ import 'react-calendar/dist/Calendar.css';
 import './MainCalendar.css';
 import { Link } from 'react-router-dom';
 import MainMap from './Map/MainMap';
+import { RiPlantLine } from 'react-icons/ri';
 
 const MainCalendar = () => {
 	const [date, setDate] = useState(new Date());
@@ -18,10 +19,11 @@ const MainCalendar = () => {
 	};
 	return (
 		<>
-			<Calendar onClickDay={handleShow} onChange={setDate} value={date} formatDay={(locale, date) => date.toLocaleDateString('en', { day: 'numeric' })} calendarType='US'></Calendar>
 			<Link className='plantBtn' to={'/plant'} state={{ date: date }}>
+				<RiPlantLine />
 				Plant
 			</Link>
+			<Calendar onClickDay={handleShow} onChange={setDate} value={date} formatDay={(locale, date) => date.toLocaleDateString('en', { day: 'numeric' })} calendarType='US'></Calendar>
 			<Modal size='xl' show={show} onHide={handleClose} centered>
 				<Modal.Header>
 					<Button onClick={handleClose}>{'<'}</Button>
@@ -33,7 +35,7 @@ const MainCalendar = () => {
 							<Col>
 								<MainTodoList date={date}></MainTodoList>
 							</Col>
-							<Col xl='6' lg='12'>
+							<Col xl='6' md='12'>
 								<MainMap></MainMap>
 							</Col>
 						</Row>
