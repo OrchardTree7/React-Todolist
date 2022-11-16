@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
-import styles from "./Progress.css";
+import "./Progress.css";
 
 const Progress = ({date}) => {
     const dateYearMonth = `${date.getFullYear()}.${date.getMonth()+1}`
@@ -9,14 +9,15 @@ const Progress = ({date}) => {
     const allTodos = todos.length
     // 해당 달의 completed todos 필터링
     const completedTodos = todos.filter((todo) => todo.status == 'completed').length
-    
+    const completed = Math.round(completedTodos/allTodos*100)
     return(
-        <div>
+        <div classNmae='body'>
             <ProgressBar 
-                completed={Math.round(completedTodos/allTodos*100)} 
-                bgColor="#36CF00"
+                completed={completed} 
+                bgColor="#3a3c68"
                 baseBgColor="#fff"
             />
+            <img className='plantImg' src={`assets/plant/${Math.floor(completed/4)}.png`}/>            
         </div>
     )
 };
