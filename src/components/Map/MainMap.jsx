@@ -4,6 +4,8 @@ import Map, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import axios from 'axios';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+import GeocoderControl from './GeocoderControl';
+
 /**
  * '해결사항 : Marker 클릭 했을 시 Popup이 안 나타나는 문제
  */
@@ -92,6 +94,7 @@ const MainMap = () => {
 						<Button varient='secondary'>save</Button>
 					</Popup>
 				)}
+				<GeocoderControl mapboxAccessToken={TOKEN} position='top-left'></GeocoderControl>
 				<GeolocateControl trackUserLocation={true}></GeolocateControl>
 			</Map>
 		</div>
