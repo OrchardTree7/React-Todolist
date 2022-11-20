@@ -13,9 +13,12 @@ const Progress = ({date}) => {
     return(
         <div classNmae='body'>
             <ProgressBar 
+                maxCompleted={100}
                 completed={completed} 
                 bgColor="#3a3c68"
                 baseBgColor="#fff"
+                height="15px"
+                
             />
             <img className='plantImg' src={`assets/plant/${Math.floor(completed/4)}.png`}/>            
         </div>
