@@ -2,6 +2,13 @@
 	font-family: 'Do_Hyeon';
 }
 
+.background {
+	background: rgb(241, 249, 245);
+	align-items: center;
+	border-radius: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
 .month {
 	text-align: center;
 	font-size: 2rem;
