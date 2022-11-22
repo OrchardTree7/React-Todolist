@@ -8,7 +8,7 @@
 body {
   margin: 0;
   width: 100vw;
-  height: 110vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,15 +95,16 @@ button {
 }
 
 .btn-primary {
-	--bs-btn-color: #000;
-	--bs-btn-border-color: none;
+  --bs-btn-color: #000;
+  --bs-btn-border-color: none;
   --bs-btn-active-bg: #3a3c68;
-	--bs-btn-hover-bg: #3a3c68;
-	--bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #3a3c68;
+  --bs-btn-hover-color: #000;
 }
 
 .plantBtn {
   text-decoration: none;
+  background-color: #fff;
   color: black;
 }
 
