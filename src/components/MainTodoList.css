@@ -1,7 +1,6 @@
 .conn {
-	/* width: 450px; */
-	display: flex;
-	flex-direction: column;
-	overflow-y: auto;
-	overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: auto;
 }

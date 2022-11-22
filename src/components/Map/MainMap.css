@@ -1,9 +1,10 @@
-/* .btn-marker {
-	background: url('../../assets/image/marker_red.png') no-repeat center / contain;
-	width: 22px;
-	height: 35px;
-	border: none;
+.btn-marker {
+  background: url('../../assets/image/marker_red.png') no-repeat center /
+    contain;
+  width: 22px;
+  height: 35px;
+  border: none;
 }
 .btn-marker:focus {
-	outline: transparent;
-} */
+  outline: transparent;
+}
