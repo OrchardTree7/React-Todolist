@@ -4,7 +4,13 @@ import { useControl, Marker } from 'react-map-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const GeocoderControl = (props) => {
-	const [marker, setMarker] = useState(null);
+	const [marker, setMarker] = useState([]);
+	const [popupInfo, setPopupInfo] = useState(null);
+
+	const onClickMarker = (e, poi) => {
+		e.originalEvent.stopPropagation();
+		setPopupInfo(poi);
+	};
 
 	const geocoder = useControl(
 		() => {
@@ -21,7 +27,23 @@ const GeocoderControl = (props) => {
 				const { result } = evt;
 				const location = result && (result.center || (result.geometry?.type === 'Point' && result.geometry.coordinates));
 				if (location && props.marker) {
-					setMarker(<Marker {...props.marker} longitude={location[0]} latitude={location[1]} color={'red'} />);
+					setMarker(
+						<Marker
+							{...props.marker}
+							longitude={location[0]}
+							latitude={location[1]}
+							color={'red'}
+							onClick={(e, p = poi) => {
+								onClickMarker(e, p);
+							}}
+						/>,
+						popupInfo && (
+							<Popup anchor='top' longitude={Number(popupInfo.center[0])} latitude={Number(popupInfo.center[1])} onClose={() => setPopupInfo(null)}>
+								{popupInfo.text}
+								<Button varient='secondary'>save</Button>
+							</Popup>
+						)
+					);
 				} else {
 					setMarker(null);
 				}
