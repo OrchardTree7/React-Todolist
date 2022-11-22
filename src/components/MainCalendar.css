@@ -3,12 +3,11 @@
   font-size: 20px;
   text-shadow: 10 10 0 #000;
   box-sizing: border-box;
+  height: 100vh;
 }
 
 body {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
