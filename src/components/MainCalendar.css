@@ -8,11 +8,11 @@
 body {
   margin: 0;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  accent-color: #8c4d8c;
+  /* accent-color: var(--color-accent); */
   background: rgb(118, 111, 122);
   background: linear-gradient(
     90deg,
@@ -26,7 +26,6 @@ body {
   overflow: hidden;
   border-radius: 0.6rem;
   display: flex;
-  background-color: #f1f9f5; /* plant 부분 배경 색상추가 */
   flex-direction: column;
   box-shadow: 5px 10px 20px rgba(79, 51, 82, 0.253);
 }
@@ -84,11 +83,11 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f5f5f5;
+  background-color: var(--color-bg-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #aaa7a7;
+  background-color: var(--color-scrollbar);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -105,7 +104,6 @@ button {
 
 .plantBtn {
   text-decoration: none;
-  background-color: #fff;
   color: black;
 }
 
@@ -117,3 +115,4 @@ button {
 .buttoncc {
   background-color: rgba(210, 181, 227, 0.649);
 }
+
