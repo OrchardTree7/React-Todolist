@@ -26,9 +26,9 @@ export default function TodoList({ filter, selDate, date }) {
   });
 
   return (
-    <section className="container">
+    <section className={styles.container}>
       <AddTodo onAdd={handleAdd} selDate={selDate} />
-      <ul className="list">
+      <ul className={styles.list}>
         {filtered.map((item) => (
           <Todo
             key={item.id}
