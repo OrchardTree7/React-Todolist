@@ -38,10 +38,10 @@ export default function Todo({ todo, onUpdate, onDelete, date }) {
         </label>
       )}
       <span className="icon">
-        <button onClick={handleEdit}>
+        <button className="button" onClick={handleEdit}>
           <FaEdit />
         </button>
-        <button onClick={handleDelete}>
+        <button className="button" onClick={handleDelete}>
           <FaTrashAlt />
         </button>
       </span>
