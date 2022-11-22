@@ -12,6 +12,7 @@ input {
   outline: none;
   border-radius: 8px;
   text-align: center;
+  width: 240px;
 }
 
 button {
@@ -21,5 +22,5 @@ button {
 }
 
 button:hover {
-  filter: brightness(130%);
+  background-color: rgba(210, 181, 227, 0.649);
 }
