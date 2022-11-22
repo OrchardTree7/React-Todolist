@@ -26,7 +26,7 @@ const MainCalendar = () => {
 			<Calendar onClickDay={handleShow} onChange={setDate} value={date} formatDay={(locale, date) => date.toLocaleDateString('en', { day: 'numeric' })} calendarType='US'></Calendar>
 			<Modal size='xl' show={show} onHide={handleClose} centered>
 				<Modal.Header>
-					<Button onClick={handleClose}>{'<'}</Button>
+					<Button className="buttoncc" onClick={handleClose}>
 					<Modal.Title>{`${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`}</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
