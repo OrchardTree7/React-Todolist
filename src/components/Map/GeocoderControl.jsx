@@ -1,16 +1,15 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { useControl, Marker } from 'react-map-gl';
+import { useControl, Marker, Popup } from 'react-map-gl';
+import { Button } from 'react-bootstrap';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const GeocoderControl = (props) => {
-	const [marker, setMarker] = useState([]);
-	const [popupInfo, setPopupInfo] = useState(null);
+	const pois = props.pois;
+	const setPois = props.setPois;
 
-	const onClickMarker = (e, poi) => {
-		e.originalEvent.stopPropagation();
-		setPopupInfo(poi);
-	};
+	const [marker, setMarker] = useState([]);
+	const [popup, setPopup] = useState(null);
 
 	const geocoder = useControl(
 		() => {
@@ -25,24 +24,17 @@ const GeocoderControl = (props) => {
 				props.onResult(evt);
 
 				const { result } = evt;
+				const popupInfo = result;
 				const location = result && (result.center || (result.geometry?.type === 'Point' && result.geometry.coordinates));
 				if (location && props.marker) {
-					setMarker(
-						<Marker
-							{...props.marker}
-							longitude={location[0]}
-							latitude={location[1]}
-							color={'red'}
-							onClick={(e, p = poi) => {
-								onClickMarker(e, p);
-							}}
-						/>,
-						popupInfo && (
-							<Popup anchor='top' longitude={Number(popupInfo.center[0])} latitude={Number(popupInfo.center[1])} onClose={() => setPopupInfo(null)}>
-								{popupInfo.text}
-								<Button varient='secondary'>save</Button>
-							</Popup>
-						)
+					setMarker(<Marker {...props.marker} longitude={location[0]} latitude={location[1]} color={'red'} />);
+					setPopup(
+						<Popup anchor='top' longitude={Number(popupInfo.center[0])} latitude={Number(popupInfo.center[1])}>
+							{popupInfo.text}
+							<Button varient='secondary' onClick={(e, p = popupInfo) => setPois((pois) => [...pois, { center: p.center, text: p.text }])}>
+								save
+							</Button>
+						</Popup>
 					);
 				} else {
 					setMarker(null);
@@ -56,7 +48,6 @@ const GeocoderControl = (props) => {
 		}
 	);
 
-	// @ts-ignore (TS2339) private member
 	if (geocoder._map) {
 		if (geocoder.getProximity() !== props.proximity && props.proximity !== undefined) {
 			geocoder.setProximity(props.proximity);
@@ -95,7 +86,12 @@ const GeocoderControl = (props) => {
 			geocoder.setOrigin(props.origin);
 		}
 	}
-	return marker;
+	return (
+		<>
+			{marker}
+			{popup}
+		</>
+	);
 };
 
 const noop = () => {};
