@@ -10,6 +10,7 @@ import { RiPlantLine } from 'react-icons/ri';
 import moment from 'moment';
 
 const MainCalendar = () => {
+	const [calendarDate, setCalendarDate] = useState(new Date());
 	const [date, setDate] = useState(new Date());
 	const [show, setShow] = useState(false);
 	const [location, setLocation] = useState(null);
@@ -31,7 +32,7 @@ const MainCalendar = () => {
 	};
 	return (
 		<>
-			<Link className='plantBtn' to={'/plant'} state={{ date: date }}>
+			<Link className='plantBtn' to={'/plant'} state={{ calendarDate: calendarDate }}>
 				<RiPlantLine />
 				Plant
 			</Link>

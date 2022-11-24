@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import ProgressBar from '@ramonak/react-progress-bar';
 import './Progress.css';
 
-const Progress = ({ date }) => {
-  const dateYearMonth = `${date.getFullYear()}.${date.getMonth() + 1}`;
+const Progress = ({ calendarDate }) => {
+  const dateYearMonth = `${calendarDate.getFullYear()}.${calendarDate.getMonth() + 1}`;
   const todos = readTodosFromLocalStorage(dateYearMonth);
 
   const allTodos = todos.length;
