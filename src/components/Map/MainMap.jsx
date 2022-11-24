@@ -84,7 +84,7 @@ const MainMap = ({ date, location }) => {
 				mapStyle='mapbox://styles/mapbox/streets-v9'
 				mapboxAccessToken={TOKEN}
 				onClick={value && handleClick}
-				// onMouseMove={value && handleMove}
+				onMouseMove={value && handleMove}
 				// api호출 너무 많고, 팝업 표시되는것이 부자연스러움
 			>
 				{pois &&

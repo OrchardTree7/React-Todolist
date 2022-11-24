@@ -36,10 +36,9 @@ const MainCalendar = () => {
 				Plant
 			</Link>
 			<Calendar
-				// 유저가 네비게이션 버튼에 상호작용시 불려올 콜백
-				// onActiveStartDateChange={(e) => {
-				// 	console.log(e);
-				// }}
+				onActiveStartDateChange={(e) => {
+					console.log(e);
+				}}
 				onClickDay={handleShow}
 				onChange={setDate}
 				value={date}
@@ -48,7 +47,7 @@ const MainCalendar = () => {
 				// 타일에 클래스명 할당해 스타일 추가
 				tileClassName={({ date, view }) => {
 					if (todos.find((todo) => todo.date === moment(date).format('YYYY.MM.DD'))) {
-						return 'highlight';
+						return 'highlig	ht';
 					}
 				}}
 			></Calendar>
