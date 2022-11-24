@@ -10,6 +10,7 @@ import { RiPlantLine } from 'react-icons/ri';
 import moment from 'moment';
 
 const MainCalendar = () => {
+	const [calendarDate, setCalendarDate] = useState(new Date());
 	const [date, setDate] = useState(new Date());
 	const [show, setShow] = useState(false);
 	const [location, setLocation] = useState(null);
@@ -31,15 +32,15 @@ const MainCalendar = () => {
 	};
 	return (
 		<>
-			<Link className='plantBtn' to={'/plant'} state={{ date: date }}>
+			<Link className='plantBtn' to={'/plant'} state={{ calendarDate: calendarDate }}>
 				<RiPlantLine />
 				Plant
 			</Link>
 			<Calendar
 				// 유저가 네비게이션 버튼에 상호작용시 불려올 콜백
-				// onActiveStartDateChange={(e) => {
-				// 	console.log(e);
-				// }}
+				onActiveStartDateChange={(e) => {
+					setCalendarDate(e.activeStartDate);
+				}}
 				onClickDay={handleShow}
 				onChange={setDate}
 				value={date}
