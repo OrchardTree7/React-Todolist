@@ -32,7 +32,7 @@ const MainCalendar = () => {
 	};
 	// 타일에 todo에서 작성한 내용 불러오기 (수정중)
 	const titleContent = ({ date, view }) =>
-		todos.find((todo) => todo.date === moment(date).format('YYYY.MM.DD')) ? <p>{todos.map((item) => item.text)}</p> : null;
+		todos.find((todo) => todo.date === moment(date).format('YYYY.MM.DD')) ? <p>{todos.map((item, index) => <div>{item.text}</div>)}</p> : null;
 	
 	return (
 		<>
