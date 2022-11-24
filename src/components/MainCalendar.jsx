@@ -30,9 +30,11 @@ const MainCalendar = () => {
 		setDate(value);
 		setShow(true);
 	};
-	// 타일에 todo에서 작성한 내용 불러오기 (수정중)
+	// 타일에 todo에서 작성한 내용 불러오기
 	const titleContent = ({ date, view }) =>
-		todos.find((todo) => todo.date === moment(date).format('YYYY.MM.DD')) ? <div>{todos.map((item, index) => <div key={index}>{item.text}</div>)}</div> : null;
+		todos
+			.filter((todo) => todo.date === moment(date).format('YYYY.MM.DD'))
+			.map((item, index) => <div key={index}>{item.text}</div>)
 	
 	return (
 		<>
