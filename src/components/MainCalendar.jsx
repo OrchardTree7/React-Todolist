@@ -17,18 +17,22 @@ const MainCalendar = () => {
 	// 타일에 달성률 표시를 위한 데이터 불러오기
 	const dateYearMonth = `${date.getFullYear()}.${date.getMonth() + 1}`;
 	const [todos, setTodos] = useState(() => readTodosFromLocalStorage(dateYearMonth));
-
+``
 	useEffect(() => {
 		navigator.geolocation.getCurrentPosition((pos) => {
 			setLocation({ lng: pos.coords.longitude, lat: pos.coords.latitude });
 		});
 	}, []);
 
-	const handleClose = () => setShow(false);
+	const handleClose = () => { setShow(false); setTodos(() => readTodosFromLocalStorage(dateYearMonth)) };
 	const handleShow = (value, event) => {
 		setDate(value);
 		setShow(true);
 	};
+	// 타일에 todo에서 작성한 내용 불러오기 (수정중)
+	const titleContent = ({ date, view }) =>
+		todos.find((todo) => todo.date === moment(date).format('YYYY.MM.DD')) ? <p>{todos.map((item) => item.text)}</p> : null;
+	
 	return (
 		<>
 			<Link className='plantBtn' to={'/plant'} state={{ date: date }}>
@@ -40,6 +44,7 @@ const MainCalendar = () => {
 				// onActiveStartDateChange={(e) => {
 				// 	console.log(e);
 				// }}
+				tileContent={titleContent}
 				onClickDay={handleShow}
 				onChange={setDate}
 				value={date}
