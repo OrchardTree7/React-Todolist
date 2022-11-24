@@ -34,7 +34,7 @@ const MainCalendar = () => {
 	const titleContent = ({ date, view }) =>
 		todos
 			.filter((todo) => todo.date === moment(date).format('YYYY.MM.DD'))
-			.map((item, index) => <div key={index}>{item.text}</div>)
+			.map((item) => <div>{item.text}</div>)
 	
 	return (
 		<>
