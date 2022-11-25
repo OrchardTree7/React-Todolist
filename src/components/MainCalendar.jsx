@@ -25,11 +25,16 @@ const MainCalendar = () => {
 		});
 	}, []);
 
-	const handleClose = () => setShow(false);
+	const handleClose = () => { setShow(false); setTodos(() => readTodosFromLocalStorage(dateYearMonth)) };
 	const handleShow = (value, event) => {
 		setDate(value);
 		setShow(true);
 	};
+	// 타일에 todo에서 작성한 내용 불러오기
+	const titleContent = ({ date, view }) =>
+		todos
+			.filter((todo) => todo.date === moment(date).format('YYYY.MM.DD'))
+			.map((item) => <div>{item.text}</div>)
 	return (
 		<>
 			<Link className='plantBtn' to={'/plant'} state={{ calendarDate: calendarDate }}>
@@ -37,10 +42,9 @@ const MainCalendar = () => {
 				Plant
 			</Link>
 			<Calendar
+				tileContent={titleContent}
 				onActiveStartDateChange={(e) => {
-					console.log(e);
-					const date = e.activeStartDate;
-					setTodos(() => readTodosFromLocalStorage(`${date.getFullYear()}.${date.getMonth() + 1}`));
+					setCalendarDate(e.activeStartDate);
 				}}
 				onClickDay={handleShow}
 				onChange={setDate}
