@@ -39,6 +39,8 @@ const MainCalendar = () => {
 			<Calendar
 				onActiveStartDateChange={(e) => {
 					console.log(e);
+					const date = e.activeStartDate;
+					setTodos(() => readTodosFromLocalStorage(`${date.getFullYear()}.${date.getMonth() + 1}`));
 				}}
 				onClickDay={handleShow}
 				onChange={setDate}
@@ -47,8 +49,8 @@ const MainCalendar = () => {
 				calendarType='US'
 				// 타일에 클래스명 할당해 스타일 추가
 				tileClassName={({ date, view }) => {
-					if (todos.find((todo) => todo.date === moment(date).format('YYYY.MM.DD'))) {
-						return 'highlig	ht';
+					if (todos.find((todo) => todo.date === moment(date).format('YYYY.MM.DD')) || todos.find((todo) => todo.date === moment(date).format('YYYY.MM.D'))) {
+						return 'highlight';
 					}
 				}}
 			></Calendar>
