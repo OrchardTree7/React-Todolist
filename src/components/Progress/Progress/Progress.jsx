@@ -16,7 +16,7 @@ const Progress = ({ calendarDate }) => {
       <ProgressBar
         maxCompleted={100}
         completed={completed}
-        bgColor="#3a3c68"
+        bgColor="#8c4d8c"
         baseBgColor="#fff"
         height="15px"
       />
