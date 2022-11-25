@@ -35,7 +35,8 @@ body {
 }
 
 .react-calendar__tile--now {
-	background: #81a6d3;
+	color: #fff;
+	background: #8c4d8c;
 }
 
 .react-calendar__month-view__weekdays {
@@ -51,13 +52,13 @@ body {
 
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {
-	color: #fff;
-	background-color: #3a3c68;
+	color: #000;
+	background-color: rgba(210, 181, 227, 0.649);
 }
 
 .react-calendar__tile--active {
-	color: #fff;
-	background-color: #3a3c68;
+	color: #000;
+	background-color: rgba(210, 181, 227, 0.649);
 }
 
 @font-face {
@@ -98,9 +99,9 @@ button {
 .btn-primary {
 	--bs-btn-color: #000;
 	--bs-btn-border-color: none;
-	--bs-btn-active-bg: #3a3c68;
-	--bs-btn-hover-bg: #3a3c68;
-	--bs-btn-hover-color: #000;
+	--bs-btn-active-bg: #8c4d8c;
+	--bs-btn-hover-bg: #8c4d8c;
+	--bs-btn-hover-color: #fff;
 }
 
 .plantBtn {
