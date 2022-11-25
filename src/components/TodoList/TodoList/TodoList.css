@@ -1,10 +1,10 @@
-container {
+.container {
   height: 400px;
-  min-height: 0;
   display: flex;
 }
 
-list {
+.list {
   flex: 1 1 auto;
   overflow-y: auto;
+  overflow-x: auto;
 }
