@@ -4,6 +4,7 @@ import Map, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import './MainMap.css';
 
 import GeocoderControl from './GeocoderControl';
 import { RiContactsBookLine } from 'react-icons/ri';
