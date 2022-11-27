@@ -1,5 +1,4 @@
 import ProgressBar from '@ramonak/react-progress-bar';
-import './Progress.css';
 
 const Progress = ({ calendarDate }) => {
   const dateYearMonth = `${calendarDate.getFullYear()}.${calendarDate.getMonth() + 1}`;
