@@ -12,11 +12,11 @@ const MainProgress = () => {
 
   return (
     <Container>
-      <Link className="calendarBtn" to={'/'}>
-        <BsCalendar3 />
-        Calendar
-      </Link>
       <div className="background">
+        <Link className="calendarBtn" to={'/'}>
+          <BsCalendar3 />
+          Calendar
+        </Link>
         <div className="month">{month}</div>
         <Progress calendarDate={calendarDate} />
       </div>
