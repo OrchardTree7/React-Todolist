@@ -25,7 +25,10 @@ const MainCalendar = () => {
 		});
 	}, []);
 
-	const handleClose = () => { setShow(false); setTodos(() => readTodosFromLocalStorage(dateYearMonth)) };
+	const handleClose = () => {
+		setShow(false);
+		setTodos(() => readTodosFromLocalStorage(dateYearMonth));
+	};
 	const handleShow = (value, event) => {
 		setDate(value);
 		setShow(true);
@@ -33,11 +36,14 @@ const MainCalendar = () => {
 	// 타일에 todo에서 작성한 내용 불러오기
 	const titleContent = ({ date, view }) =>
 		todos
-			.filter((todo) => (todo.date === moment(date).format('YYYY.MM.DD'))
-				|| (todo.date === moment(date).format('YYYY.MM.D'))
-				|| (todo.date === moment(date).format('YYYY.M.DD'))
-				|| (todo.date === moment(date).format('YYYY.M.D')))
-			.map((item) => <div>{item.text}</div>)
+			.filter(
+				(todo) =>
+					todo.date === moment(date).format('YYYY.MM.DD') ||
+					todo.date === moment(date).format('YYYY.MM.D') ||
+					todo.date === moment(date).format('YYYY.M.DD') ||
+					todo.date === moment(date).format('YYYY.M.D')
+			)
+			.map((item) => <div>{item.text}</div>);
 	return (
 		<>
 			<Link className='plantBtn' to={'/plant'} state={{ calendarDate: calendarDate }}>
@@ -47,6 +53,7 @@ const MainCalendar = () => {
 			<Calendar
 				tileContent={titleContent}
 				onActiveStartDateChange={(e) => {
+					console.log(e.value);
 					setCalendarDate(e.activeStartDate);
 				}}
 				onClickDay={handleShow}
@@ -56,10 +63,12 @@ const MainCalendar = () => {
 				calendarType='US'
 				// 타일에 클래스명 할당해 스타일 추가
 				tileClassName={({ date, view }) => {
-					if (todos.find((todo) => todo.date === moment(date).format('YYYY.MM.DD'))
-						|| todos.find((todo) => todo.date === moment(date).format('YYYY.MM.D'))
-						|| todos.find((todo) => todo.date === moment(date).format('YYYY.M.DD'))
-						|| todos.find((todo) => todo.date === moment(date).format('YYYY.M.D'))) {
+					if (
+						todos.find((todo) => todo.date === moment(date).format('YYYY.MM.DD')) ||
+						todos.find((todo) => todo.date === moment(date).format('YYYY.MM.D')) ||
+						todos.find((todo) => todo.date === moment(date).format('YYYY.M.DD')) ||
+						todos.find((todo) => todo.date === moment(date).format('YYYY.M.D'))
+					) {
 						return 'highlight';
 					}
 				}}
